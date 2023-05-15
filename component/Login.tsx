@@ -6,6 +6,7 @@ import {
   Platform,
   KeyboardAvoidingView,
   TouchableWithoutFeedback,
+  TouchableOpacity,
   Keyboard,
 } from 'react-native';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
@@ -88,7 +89,10 @@ export default function Login({navigation}: any) {
                 <Text style={{textAlign: 'center'}}>Lưu đăng nhập</Text>
               </View>
             </View>
-            <View
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('listquarter');
+              }}
               style={{
                 backgroundColor: '#EAB042',
                 flex: 1,
@@ -104,13 +108,10 @@ export default function Login({navigation}: any) {
                   textAlign: 'center',
                   fontWeight: '900',
                   fontSize: 20,
-                }}
-                onPress={() => {
-                  navigation.navigate('listquarter');
                 }}>
                 Đăng nhập
               </Text>
-            </View>
+            </TouchableOpacity>
           </View>
         </View>
       </TouchableWithoutFeedback>

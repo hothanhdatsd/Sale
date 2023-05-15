@@ -1,6 +1,5 @@
 import {View, Text, Image, TouchableOpacity, TextInput} from 'react-native';
 import React, {useState} from 'react';
-import changePassword from './changePassword';
 
 const ContentComponent = () => {
   return (
@@ -56,7 +55,7 @@ const ContentComponent = () => {
 };
 
 export default function UserDetail({navigation}: any) {
-  const [clicked, setClicked] = useState(false);
+  const [clicked, setClicked] = useState<boolean>(false);
   return (
     <View
       style={{flex: 1}}
@@ -117,9 +116,9 @@ export default function UserDetail({navigation}: any) {
             <Text
               style={{textDecorationLine: 'underline'}}
               onPress={() => {
-                if (clicked == false) {
-                  setClicked(true);
+                if (clicked) {
                 } else {
+                  setClicked(true);
                 }
               }}>
               Đổi mật khẩu
@@ -185,7 +184,7 @@ export default function UserDetail({navigation}: any) {
                 textAlign: 'center',
                 fontSize: 22,
                 textTransform: 'uppercase',
-                fontWeight: '400',
+                fontWeight: '600',
               }}>
               Đăng xuất
             </Text>
